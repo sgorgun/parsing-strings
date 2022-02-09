@@ -10,7 +10,7 @@ namespace ParsingStrings.Tests
         [TestCase("abc")]
         [TestCase("-2147483649")]
         [TestCase("2147483648")]
-        public void TryParseInteger_StrIsInvalid_ReturnsFalse(string str)
+        public void TryParseInteger_StrIsInvalid_ReturnsFalse(string? str)
         {
             // Act
             bool actualResult = NumberParser.TryParseInteger(str, out _);

@@ -10,7 +10,7 @@ namespace ParsingStrings
         /// <param name="str">A string that contains a single character, or null.</param>
         /// <param name="result">When this method returns, contains a Unicode character equivalent to the sole character in <see cref="str"/>, if the conversion succeeded, or an undefined value if the conversion failed.</param>
         /// <returns>true if the <see cref="str"/> parameter was converted successfully; otherwise, false.</returns>
-        public static bool TryParseChar(string str, out char result)
+        public static bool TryParseChar(string? str, out char result)
         {
             // TODO #15. Implement the method using "char.TryParse" method.
             throw new NotImplementedException();
@@ -21,7 +21,7 @@ namespace ParsingStrings
         /// </summary>
         /// <param name="str">A string that contains a single character, or null.</param>
         /// <returns>A Unicode character equivalent to the sole character in <see cref="str"/>. If a formatting error occurs returns space character.</returns>
-        public static char ParseChar(string str)
+        public static char ParseChar(string? str)
         {
             // TODO #16. Implement the method using "char.Parse" method, and add exception handling.
             throw new NotImplementedException();

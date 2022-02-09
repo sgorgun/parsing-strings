@@ -8,7 +8,7 @@ namespace ParsingStrings.Tests
         [TestCase(null)]
         [TestCase("")]
         [TestCase("ab")]
-        public void TryParseChar_StrIsInvalid_ReturnsFalse(string str)
+        public void TryParseChar_StrIsInvalid_ReturnsFalse(string? str)
         {
             // Act
             bool actualResult = CharParser.TryParseChar(str, out _);

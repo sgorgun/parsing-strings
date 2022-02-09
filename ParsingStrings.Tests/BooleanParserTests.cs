@@ -8,7 +8,7 @@ namespace ParsingStrings.Tests
         [TestCase(null)]
         [TestCase("")]
         [TestCase("abc")]
-        public void TryParseBoolean_StrIsInvalid_ReturnsFalse(string str)
+        public void TryParseBoolean_StrIsInvalid_ReturnsFalse(string? str)
         {
             // Act
             bool actualResult = BooleanParser.TryParseBoolean(str, out _);

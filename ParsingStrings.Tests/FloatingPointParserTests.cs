@@ -27,7 +27,7 @@ namespace ParsingStrings.Tests
             new object[] { "79228162514264337593543950336", -2.2m },
         };
 
-        private CultureInfo currentCulture;
+        private CultureInfo? currentCulture;
 
         [OneTimeSetUp]
         public void SetupFixture()
@@ -39,13 +39,13 @@ namespace ParsingStrings.Tests
         [OneTimeTearDown]
         public void TearDown()
         {
-            CultureInfo.CurrentCulture = this.currentCulture;
+            CultureInfo.CurrentCulture = this.currentCulture ?? CultureInfo.CurrentCulture;
         }
 
         [TestCase(null)]
         [TestCase("")]
         [TestCase("abc")]
-        public void TryParseFloat_StrIsInvalid_ReturnsFalse(string str)
+        public void TryParseFloat_StrIsInvalid_ReturnsFalse(string? str)
         {
             // Act
             bool actualResult = FloatingPointParser.TryParseFloat(str, out _);
@@ -93,7 +93,7 @@ namespace ParsingStrings.Tests
         [TestCase(null)]
         [TestCase("")]
         [TestCase("abc")]
-        public void TryParseDouble_StrIsInvalid_ReturnsFalse(string str)
+        public void TryParseDouble_StrIsInvalid_ReturnsFalse(string? str)
         {
             // Act
             bool actualResult = FloatingPointParser.TryParseDouble(str, out _);
@@ -142,7 +142,7 @@ namespace ParsingStrings.Tests
         [TestCase("abc")]
         [TestCase("-79228162514264337593543950336")]
         [TestCase("79228162514264337593543950336")]
-        public void TryParseDecimal_StrIsInvalid_ReturnsFalse(string str)
+        public void TryParseDecimal_StrIsInvalid_ReturnsFalse(string? str)
         {
             // Act
             bool actualResult = FloatingPointParser.TryParseDecimal(str, out _);
@@ -156,7 +156,7 @@ namespace ParsingStrings.Tests
         public void TryParseDecimal_StrIsValid_ReturnsResult(object[] data)
         {
             // Arrange
-            string str = data[0] as string;
+            string str = (string)data[0];
             decimal expectedResult = (decimal)data[1];
 
             // Act
@@ -179,7 +179,7 @@ namespace ParsingStrings.Tests
         public void ParseDecimal_StrIsValid_ReturnsResult(object[] data)
         {
             // Arrange
-            string str = data[0] as string;
+            string str = (string)data[0];
             decimal expectedResult = (decimal)data[1];
 
             // Act
