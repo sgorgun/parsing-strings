@@ -10,7 +10,7 @@
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <AdditionalFiles Include="..\code-analysis.ruleset" Link="Properties\code-analisys.ruleset" />
+    <AdditionalFiles Include="..\code-analysis.ruleset" Link="Properties\code-analysis.ruleset" />
     <AdditionalFiles Include="..\stylecop.json" Link="Properties\stylecop.json" />
   </ItemGroup>
   <ItemGroup>
